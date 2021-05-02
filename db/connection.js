@@ -1,9 +1,14 @@
+import dotenv from 'dotenv-safe';
 import mongoose from 'mongoose';
 
+dotenv.config();
 
-const URI = 'mongodb+srv://appUser:appUser@cluster0.y7c4p.mongodb.net/testDB?retryWrites=true&w=majority';
+const dbParams = {
+    URI: process.env.URI
+}
+
 export const connectDB = async () => {
-    await mongoose.connect(URI, {
+    await mongoose.connect(dbParams.URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
