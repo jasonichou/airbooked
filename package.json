@@ -1,6 +1,27 @@
 {
+  "name": "airbooked",
+  "version": "1.0.0",
+  "description": "This project showcases how analyzing historical airbnb data can help prospective hosts plan their new listing.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonichou/airbooked.git"
+  },
+  "author": "Jason Chou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonichou/airbooked/issues"
+  },
+  "homepage": "https://github.com/jasonichou/airbooked#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
   }
 }
