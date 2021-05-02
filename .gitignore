@@ -1,4 +1,5 @@
 
 # ignore config file with credentials
 # manually insert a template config file in github, and the real config file in server
+.env
 config.js
