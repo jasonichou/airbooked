@@ -2,15 +2,11 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-let user = new Schema({
-    firstName:{
-        type: String
-    },
-    lastName:{
-        type: String
-    }
+let userSchema = new Schema({
+    firstName: String,
+    lastName: String
 });
 
-const User = mongoose.model('User', user); 
+const User = mongoose.model('User', userSchema); 
 
 export {User as default};
