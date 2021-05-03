@@ -6,7 +6,6 @@ import router from './api/routes/router.js'
 import userModel from './api/routes/user.js'
 
 
-
 dotenv.config();
 connectDB();
 const app = express();
