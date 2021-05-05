@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import User from '../models/UserModel.js';
 
+import {db} from '../../db/connection.js';
+
 const route = express.Router();
 
 route.post('/', async (req, res) => {
@@ -16,9 +18,10 @@ route.post('/', async (req, res) => {
 
 route.get('/', async (req, res) => {
     try {
-        // let userModel = new User(user);
+
         var result = await User.find().exec();
         res.json(result);
+
     } catch (err) {
         res.status(500).send(err);
     }
