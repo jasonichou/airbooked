@@ -7,14 +7,10 @@ const dbParams = {
     URI: process.env.URI
 }
 
-let db;
-
 export const connectDB = async () => {
-    db = await mongoose.connect(dbParams.URI, {
+    await mongoose.connect(dbParams.URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
     console.log('Database connected.');
 }
-
-export {db};
