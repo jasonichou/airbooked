@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-let listingSchema = new Schema({
+let ListingSchema = new Schema({
     id: String,
     name: String,
     host_id: String,
@@ -23,6 +23,6 @@ let listingSchema = new Schema({
 
 );
 
-const Listing = mongoose.model('san_francisco_listing', listingSchema); 
+const Listing = mongoose.model('san_francisco_listing', ListingSchema, 'san_francisco_listings'); 
 
 export {Listing as default};

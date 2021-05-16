@@ -2,8 +2,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import User from '../models/UserModel.js';
 
-import {db} from '../../db/connection.js';
-
 const route = express.Router();
 
 route.post('/', async (req, res) => {
