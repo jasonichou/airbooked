@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import Map from './components/Map.js';
 
 function App() {
   return (
