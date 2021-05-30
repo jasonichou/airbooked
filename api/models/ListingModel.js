@@ -23,6 +23,10 @@ let ListingSchema = new Schema({
 
 );
 
-const Listing = mongoose.model('san_francisco_listing', ListingSchema, 'san_francisco_listings'); 
+// // This works, for SF listing collection
+// const Listing = mongoose.model('san_francisco_listing', ListingSchema, 'san_francisco_listings'); 
+// export {Listing as default};
 
-export {Listing as default};
+export default function(collection) {
+    return mongoose.model(collection, ListingSchema)
+}; 

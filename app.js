@@ -36,9 +36,8 @@ app.use(cors({origin: 'http://localhost:8080'}));
 app.use('/', router);
 app.use(express.json({ extended:false }));
 app.use('/api/user', userModel);
-app.use('/api/san_francisco', listingModel);
+app.use('/api/city/:cityName', listingModel);
 
 app.listen(port, () => console.log('Server listening at port 3000.'));
-
 
 

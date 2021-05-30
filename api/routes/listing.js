@@ -1,13 +1,17 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Listing from '../models/ListingModel.js';
+import listing from '../models/ListingModel.js';
 
-const route = express.Router();
+const route = express.Router({ mergeParams: true });
+
+const citiesDict = {
+
+};
 
 route.get('/', async (req, res) => {
     try {
-        
-        var result = await Listing.find().exec();
+        let city = req.params.cityName;
+        var result = await listing(city).find().exec();
         res.json(result);
 
     } catch (err) {
