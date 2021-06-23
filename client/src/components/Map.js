@@ -13,12 +13,16 @@ class Map extends Component {
     render() {
         return (
             <div>
-                <MapContainer className='map' center={position} zoom={this.state.zoom} scrollWheelZoom={false}>
+                <MapContainer
+                    className="map"
+                    center={[this.props.position.lat, this.props.position.lng]}
+                    zoom={this.props.position.zoom}
+                    scrollWheelZoom={false}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={position} icon={myIcon}>
+                    <Marker position={[this.props.position.lat, this.props.position.lng]} icon={myIcon}>
                         <Popup>
                             A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
@@ -28,3 +32,5 @@ class Map extends Component {
         )
     }
 }
+
+export default Map;
