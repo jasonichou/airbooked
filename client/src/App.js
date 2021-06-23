@@ -25,7 +25,7 @@ class App extends Component {
     lng: -122.453,
     zoom: 13
   };
-  
+
   // componentDidMount() {
   //   fetch('http://localhost:3000/api/user')
   //   .then(res => res.json())
@@ -35,7 +35,7 @@ class App extends Component {
   //   .catch(console.log)
   // };
 
-  render () {
+  render() {
     const position = [this.state.lat, this.state.lng]
     return (
       // <Users users={this.state.users} />
