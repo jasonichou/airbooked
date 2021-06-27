@@ -36,14 +36,13 @@ class Map extends Component {
 
   render() {
     return (
-
       // ** Using react-leaflet **
       <div>
         <MapContainer
           className="map"
           center={[this.props.position.lat, this.props.position.lng]}
           zoom={this.props.position.zoom}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a>'
