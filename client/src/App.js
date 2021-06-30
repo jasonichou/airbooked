@@ -7,11 +7,7 @@ import './App.css';
 // import Users from './components/users';
 
 class App extends Component {
-  state = {
-    lat: 37.755,
-    lng: -122.453,
-    zoom: 13
-  };
+  
 
   render() {
     return (
