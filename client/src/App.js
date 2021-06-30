@@ -21,7 +21,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={() => <Home />} />
             <Route path="/about" exact component={() => <About />} />
-            <Route path="/map" exact component={() => <Map position={this.state} />} />
+            <Route path="/map/:city" exact component={() => <Map position={this.state} />}/>
+            {/* <Route path="/map" exact component={() => <Map position={this.state} />} /> */}
 
           </Switch>
           {/* <Map position={this.state} /> */}

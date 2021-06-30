@@ -1,4 +1,7 @@
 import React from "react";
+import { HomeDropDown } from "./";
+import { withRouter } from "react-router-dom";
+
 
 function Home() {
   return (
@@ -6,7 +9,7 @@ function Home() {
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
-            
+            <HomeDropDown />
             {/* <img
               class="img-fluid rounded mb-4 mb-lg-0"
               src="http://placehold.it/900x400"
@@ -28,4 +31,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withRouter(Home);
