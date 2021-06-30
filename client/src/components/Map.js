@@ -4,15 +4,15 @@ import { withRouter } from "react-router-dom";
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 
 class Map extends Component {
-  
+
   selectedCity = this.props.match.params.city;
 
-  
   state = {
     loading: true,
     position: cityLatLngZoomDict[this.selectedCity],
     listings: null
   }
+
   // API call after initial render
   async componentDidMount() {
     const cityFormatted = this.selectedCity.replaceAll('-', '_')
@@ -25,9 +25,10 @@ class Map extends Component {
     console.log(this.state.listings);
   }
 
+  // ** Main render block ** //
   render() {
     return (
-      // ** Using react-leaflet **
+      // * Using react-leaflet *
       <div>
         {/*  passing route params from App.js  */}
         <div><h2>{this.props.match.params.city}</h2></div>
@@ -48,7 +49,19 @@ class Map extends Component {
             {/* Mapping listing locations as markers after loading */}
             {
               !this.state.loading && this.state.listings.map((listing, idx) =>
-                <CircleMarker key={idx} center={[listing.latitude, listing.longitude]} radius={1}></CircleMarker>)
+                <CircleMarker
+                  key={idx}
+                  center={[listing.latitude, listing.longitude]}
+                  radius={1}
+                >
+                  <Popup>
+                    <div>{listing.name}</div>
+                    <div>Price: {listing.price}</div>
+                    <div>Reviews: {listing.number_of_reviews}</div>
+                    <div>Reviews/Month: {listing.reviews_per_month}</div>
+                  </Popup>
+                </CircleMarker>
+              )
             }
 
             {/* Test marker with prop passed from App state */}
@@ -60,12 +73,12 @@ class Map extends Component {
       </div>
     )
   }
-
 }
 
 let cityLatLngZoomDict = {
   "san-francisco": [37.755, -122.453, 13],
-  "santa-clara-county": [37.371, -122.037,11]
+  "santa-clara-county": [37.371, -122.037, 11],
+  "asheville": [35.5900461, -82.5635125,13]
 }
 
 export default withRouter(Map);

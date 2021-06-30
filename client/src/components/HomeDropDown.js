@@ -21,8 +21,9 @@ class HomeDropDown extends Component {
         <label>
           Choose your city:
           <select value={this.state.citySelected} onChange={this.handleChange}>
-            <option value="san-francisco">San Fracisco</option>
-            <option value="santa-clara-county">Santa Clara County</option>
+            <option value="san-francisco">San Fracisco, CA</option>
+            <option value="santa-clara-county">Santa Clara County, CA</option>
+            <option value="asheville">Asheville, NC</option>
           </select>
         </label>
         <input type="submit" value="Go!" />
